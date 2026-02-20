@@ -25,3 +25,19 @@ fetch("http://localhost:5678/api/works")
       gallery.appendChild(figure);
     });
   });
+
+  fetch("http://localhost:5678/api/categories")
+  .then(response => response.json())
+  .then(categories => {
+    const filtersContainer = document.querySelector(".filters");
+    
+    const btnAll = document.createElement("button");
+    btnAll.textContent = "Tous";
+    filtersContainer.appendChild(btnAll);
+    
+    categories.forEach(category => {
+      const btn = document.createElement("button");
+      btn.textContent = category.name;
+      filtersContainer.appendChild(btn);
+    });
+  });
