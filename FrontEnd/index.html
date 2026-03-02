@@ -83,6 +83,52 @@
 			</ul>
 		</nav>
 	</footer>
+<aside id="modal" class="modal hidden">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <button class="close-modal">✕</button>
+      
+      <div class="modal-gallery-view">
+        <h3>Galerie photo</h3>
+        <div class="modal-gallery-grid">
+    
+        </div>
+        <hr>
+        <button class="btn-add-photo">Ajouter une photo</button>
+      </div>
+      
+      <div class="modal-form-view hidden">
+  <button class="back-to-gallery">←</button>
+  <h3>Ajout photo</h3>
+  
+  <form id="add-work-form">
+    <div class="upload-zone">
+      <i class="fa-regular fa-image"></i>
+      <label for="image-upload" class="upload-btn">+ Ajouter photo</label>
+      <input type="file" id="image-upload" accept="image/png, image/jpeg" hidden>
+      <p class="upload-info">jpg, png : 4mo max</p>
+      <img id="image-preview" class="hidden" alt="Prévisualisation">
+    </div>
+    
+    <div class="form-group">
+      <label for="work-title">Titre</label>
+      <input type="text" id="work-title" name="title" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="work-category">Catégorie</label>
+      <select id="work-category" name="category" required>
+        <option value=""></option>
+      </select>
+    </div>
+    
+    <hr>
+    <button type="submit" class="btn-validate" disabled>Valider</button>
+  </form>
+</div>
+    </div>
+  </div>
+</aside>
 	<script src="./assets/script.js"></script>
 </body>
 
