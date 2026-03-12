@@ -180,6 +180,3 @@ categorySelect.appendChild(option);
     });
     
   });
-
-
- 
