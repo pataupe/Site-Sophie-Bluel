@@ -200,18 +200,28 @@ async function chargerCategories() {
 
   const btnAll = document.createElement("button");
   btnAll.textContent = "Tous";
+  btnAll.classList.add('active') 
   btnAll.addEventListener('click', function () {
-    afficherGalerie(allWorks);
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.classList.remove('active');
   });
+  btnAll.classList.add('active');
+  afficherGalerie(allWorks);
+});
   filtersContainer.appendChild(btnAll);
 
   categories.forEach(category => {
     const btn = document.createElement("button");
     btn.textContent = category.name;
     btn.addEventListener('click', function () {
-      const filtres = allWorks.filter(work => work.categoryId === category.id);
-      afficherGalerie(filtres);
-    });
+  document.querySelectorAll('.filters button').forEach(b => {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+  
+  const filtres = allWorks.filter(work => work.categoryId === category.id);
+  afficherGalerie(filtres);
+});
     filtersContainer.appendChild(btn);
 
     const categorySelect = document.querySelector("#work-category");

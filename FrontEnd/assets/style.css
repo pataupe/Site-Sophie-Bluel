@@ -251,7 +251,8 @@ li:hover {
 	cursor: pointer;
 }
 
-.filters button:first-child {
+
+.filters button.active {
 	background-color: #1D6154;
 	color: #fff;
 }
