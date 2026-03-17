@@ -49,6 +49,14 @@ export function afficherGalerieModale() {
   });
 }
 
+function resetModalViews() {
+  const modalGalleryView = document.querySelector(".modal-gallery-view");
+  const modalFormView = document.querySelector(".modal-form-view");
+  
+  modalGalleryView.classList.remove("hidden");
+  modalFormView.classList.add("hidden");
+}
+
 export function initModal() {
   const modal = document.querySelector("#modal");
   const editButton = document.querySelector(".edit-button");
@@ -61,11 +69,13 @@ export function initModal() {
 
   closeModalBtn.addEventListener('click', function () {
     modal.classList.add("hidden");
+    resetModalViews();
   });
 
   modal.addEventListener('click', function (event) {
     if (event.target === modal) {
       modal.classList.add("hidden");
+      resetModalViews();
     }
   });
 }
