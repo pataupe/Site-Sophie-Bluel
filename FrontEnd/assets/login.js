@@ -1,3 +1,4 @@
+const API_URL = "http://localhost:5678/api"
 const loginForm = document.getElementById('formId');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
@@ -9,7 +10,7 @@ loginForm.addEventListener('submit', async (event) => {
     let emailValue = emailInput.value;
 let passwordValue = passwordInput.value;
 
-const response = await fetch("http://localhost:5678/api/users/login", {
+const response = await fetch(`${API_URL}/users/login`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ email: emailValue, password: passwordValue })
