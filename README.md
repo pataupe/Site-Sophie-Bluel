@@ -1,40 +1,66 @@
 # Portfolio Sophie Bluel 🏛️
-Page dynamique de présentation des projets de l’architecte Sophie Bluel (HTML/CSS/JS + API).
+Site dynamique de présentation des travaux de l’architecte Sophie Bluel (HTML / CSS / JavaScript + API)
  
-## 🚀 Fonctionnalités
-- Récupération des travaux et des catégories via l’API.
-- Filtres par catégorie générés automatiquement.
-- Page de connexion pour l’administratrice (gestion du token).
-- Mode édition : bannière, bouton “modifier”, masquage des filtres.
-- Modale : suppression d’un projet, ajout d’un projet (upload image + preview, validation).
+## ✨ Fonctionnalités
+- Galerie de travaux chargée depuis l’API
+- Filtres par catégorie générés dynamiquement
+- Connexion administrateur (token)
+- Mode édition (bannière, bouton « modifier », filtres masqués)
+- Modale pour ajouter / supprimer des projets (upload + preview)
+- Mise à jour du DOM sans rechargement
  
 ## 🛠️ Technologies
 - HTML5
 - CSS3
-- JavaScript (modules ES)
+- JavaScript 
 - Fetch API
-- Font Awesome
  
-## 🔧 Installation rapide
-Backend :
+## 🚀 Installation
+ 
+Cloner le repository :
+ 
 ```bash
-cd Backend
+git clone https://github.com/pataupe/Portfolio-architecte-sophie-bluel.git
+```
+
+Installer et lancer l’API (dans Backend/) :
+
+```bash
+cd Portfolio-architecte-sophie-bluel/Backend
 npm install
 npm start
-Front :
+```
+L’API tourne sur http://localhost:5678 (Swagger : http://localhost:5678/api-docs/).
 
-Ouvrir FrontEnd/index.html dans le navigateur (ou via Live Server).
-Pour tester la connexion : FrontEnd/login.html.
+Ouvrir ensuite FrontEnd/index.html dans un navigateur (et login.html pour la page de connexion).
+
 📂 Structure
+```text
 Portfolio-architecte-sophie-bluel/
-├── Backend/   # API Node.js
+├── Backend/
 ├── FrontEnd/
-│   ├── index.html / login.html
+│   ├── index.html
+│   ├── login.html
 │   └── assets/
-│       ├── css/style.css
-│       ├── js/main.js, api.js, auth.js, gallery.js, modal.js, form.js
-│       └── images/
+│       ├── style.css
+│       ├── login.js
+│       └── js/
+│           ├── main.js
+│           ├── api.js
+│           ├── auth.js
+│           ├── gallery.js
+│           ├── modal.js
+│           └── form.js
 └── README.md
-👤 Auteur
-Nathan Degorce – Projet OpenClassrooms
-GitHub : @pataupe
+```
+
+## 🌐 Routes API
+- GET /api/works
+- GET /api/categories
+- POST /api/users/login
+- POST /api/works (auth requise)
+- DELETE /api/works/:id (auth requise)
+  
+## 👤 Auteur
+Nathan Degorce (@pataupe) — Projet réalisé dans le cadre de la formation OpenClassrooms
+
